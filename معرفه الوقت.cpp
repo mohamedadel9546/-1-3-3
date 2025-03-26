@@ -10,16 +10,16 @@ using namespace std;
 
 int main() { 
   
-  time_t	t = time(0);
-  char* dt = ctime(&t);
+  time_t	t = time(0);//هنا لو عايز تعرف الوقت الاصلى بتاعك
+  char* dt = ctime(&t);//الخطوة دى انا عاملها عشان اخد الوقت واحوله لstring
   cout << "local time" << dt << endl;
 
-  tm* tt = gmtime(&t);
-  dt = asctime(tt);
+  tm* tt = gmtime(&t);// هنا هاخد الاصل وهاحوله لغرنيتشى 
+  dt = asctime(tt);//نفس الحكايه برضك
   cout << "time:" << dt;
 
 
-  time_t y = time(0);
+  time_t y = time(0);//وهنا كل حاجه خاصه عن الوقت
   tm *z = localtime(&y);
   cout << "years ::" << z->tm_year+1900 << endl;
   cout << "month ::" << z->tm_mon+1 << endl;
